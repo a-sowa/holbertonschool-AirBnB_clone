@@ -1,5 +1,5 @@
 ![AIRBnB](https://image.noelshack.com/fichiers/2024/10/1/1709545436-dall-e-2024-03-04-10-42-38-a-stylish-and-minimalist-representation-of-a-console-interface-symbolizing-an-airbnb-clone-project-the-image-is-primarily-in-black-and-white-featur.jpg)
-# AirBnB Clone - The Console
+![AirBnB Clone - The Console](https://image.noelshack.com/fichiers/2024/10/1/1709545988-dall-e-2024-03-04-10-51-34-create-a-stylish-modern-rectangular-banner-for-the-title-airbnb-clone-the-console-the-banner-should-encapsulate-the-essence-of-a-command-interpr.png)
 
 This project is part of the Holberton School curriculum, aiming to replicate some functionalities of the AirBnB website. It starts with the back-end console, which is a command interpreter to manage AirBnB objects.
 
@@ -43,6 +43,7 @@ update: Updates an instance based on its class name and ID by adding or updating
 ## Authors
 
 Axel Sowa - [a-sowa](https://github.com/a-sowa)
+
 Huybrechts Jonathan - [JHMindSharp](https://github.com/JHMindSharp)
 
 ## Acknowledgments

@@ -3,17 +3,17 @@
 
 import cmd
 import shlex
-from models import (storage, base_model)
-# from models import user, place, state, city, amenity, review)
+from models import (storage, base_model,
+                    user, place, state, city, amenity, review)
 
 class_dict = {
     "BaseModel": base_model.BaseModel,
-    # "User": user.User,
-    # "State": state.State,
-    # "City": city.City,
-    # "Amenity": amenity.Amenity,
-    # "Place": place.Place,
-    # "Review": review.Review
+    "User": user.User,
+    "State": state.State,
+    "City": city.City,
+    "Amenity": amenity.Amenity,
+    "Place": place.Place,
+    "Review": review.Review
 }
 
 
@@ -114,15 +114,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 obj = all_objs[key]
-                if hasattr(obj, args[2]):
-                    attr_type = type(getattr(obj, args[2], str))
-                    try:
-                        val = attr_type(args[3])
-                    except ValueError:
-                        print(f"** Invalid value for {args[2]} **")
-                        return
-                    setattr(obj, args[2], val)
-                    obj.save()
+                setattr(obj, args[2], args[3])
+                obj.save()
 
 
 if __name__ == '__main__':

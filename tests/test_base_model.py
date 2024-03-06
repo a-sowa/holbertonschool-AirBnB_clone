@@ -3,10 +3,10 @@ import sys
 import os
 import unittest
 from datetime import datetime
+from models.base_model import BaseModel
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from models.base_model import BaseModel
 
 class TestBaseModel(unittest.TestCase):
     """Classe to test the BaseModel."""
@@ -25,7 +25,7 @@ class TestBaseModel(unittest.TestCase):
         my_model.name = "My_First_Model"
         my_model.my_number = 89
         model_dict = my_model.to_dict()
-        
+
         self.assertIsInstance(model_dict, dict)
         self.assertEqual(model_dict['__class__'], 'BaseModel')
         self.assertEqual(model_dict['name'], "My_First_Model")
@@ -37,13 +37,13 @@ class TestBaseModel(unittest.TestCase):
         my_model.name = "My_First_Model"
         my_model.my_number = 89
         model_dict = my_model.to_dict()
-        
         my_new_model = BaseModel(**model_dict)
         self.assertEqual(my_new_model.id, my_model.id)
         self.assertEqual(my_new_model.name, my_model.name)
         self.assertEqual(my_new_model.my_number, my_model.my_number)
         self.assertIsInstance(my_new_model.created_at, datetime)
         self.assertIsInstance(my_new_model.updated_at, datetime)
+
 
 if __name__ == '__main__':
     unittest.main()

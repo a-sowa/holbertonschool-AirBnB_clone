@@ -5,6 +5,7 @@ from io import StringIO
 from unittest.mock import create_autospec
 from console import HBNBCommand
 
+
 class TestConsole(unittest.TestCase):
     """Test cases for the HBNB console."""
 
@@ -25,7 +26,7 @@ class TestConsole(unittest.TestCase):
         """Test the create command."""
         self.console.onecmd("create User")
         user_id = self.stdout.getvalue().strip()
-        self.assertRegex(user_id, r"^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$")  # Check if it's a valid UUID
+        self.assertRegex(user_id, r"^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$")
 
     def test_show(self):
         """Test the show command."""
@@ -62,6 +63,7 @@ class TestConsole(unittest.TestCase):
         sys.stdout = self.stdout
         self.console.onecmd(f"show User {user_id}")
         self.assertIn("'name': 'Holo'", self.stdout.getvalue().strip())
+
 
 if __name__ == '__main__':
     unittest.main()

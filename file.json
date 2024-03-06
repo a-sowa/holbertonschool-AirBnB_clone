@@ -12,5 +12,21 @@
         "created_at": "2024-03-06T13:18:40.721642",
         "updated_at": "2024-03-06T13:18:40.721654",
         "__class__": "BaseModel"
+    },
+    "BaseModel.50cfc5e4-9391-47c6-a250-e7272359e07b": {
+        "id": "50cfc5e4-9391-47c6-a250-e7272359e07b",
+        "created_at": "2024-03-06T13:31:41.554789",
+        "updated_at": "2024-03-06T13:31:41.554795",
+        "name": "My_First_Model",
+        "my_number": 89,
+        "__class__": "BaseModel"
+    },
+    "BaseModel.721349e3-6e2e-40d3-ad2d-eb6b0b8caf4f": {
+        "id": "721349e3-6e2e-40d3-ad2d-eb6b0b8caf4f",
+        "created_at": "2024-03-06T13:32:28.860435",
+        "updated_at": "2024-03-06T13:32:28.860440",
+        "name": "My_First_Model",
+        "my_number": 89,
+        "__class__": "BaseModel"
     }
 }

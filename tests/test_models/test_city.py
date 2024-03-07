@@ -1,33 +1,34 @@
 #!/usr/bin/python3
 import unittest
-from models.base_model import BaseModel
 from models.city import City
+from models.base_model import BaseModel
 
 
 class TestCity(unittest.TestCase):
-    """Class to test City."""
+    """Test cases for the City class."""
 
     def setUp(self):
-        """set up for the test case."""
+        """Set up the test case."""
         self.city = City()
 
-    def tearnDown(self):
-        """Clean up after the test case."""
+    def tearDown(self):
+        """Tear down the test case."""
         del self.city
-    
+
     def test_instance(self):
-        """Test for proper initialization of City instance."""
+        """Test if the city instance is an instance of City."""
         self.assertIsInstance(self.city, City)
 
     def test_inheritance(self):
-        """Test if City inherits from BaseModel."""
-        self.assertIsInstance(self.city, BaseModel)
-    
+        """Test if City is a subclass of BaseModel."""
+        self.assertTrue(issubclass(City, BaseModel))
+
     def test_attributes(self):
-        """Test if City
-          has the correct attributes."""
+        """Test if city has the correct attributes."""
+        self.assertTrue(hasattr(self.city, "state_id"))
         self.assertTrue(hasattr(self.city, "name"))
-        self.assertEqual(self.city.id, "")
+        self.assertEqual(self.city.state_id, "")
+        self.assertEqual(self.city.name, "")
 
 
 if __name__ == '__main__':

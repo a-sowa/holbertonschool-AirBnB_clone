@@ -56,11 +56,17 @@ class TestBaseModel(unittest.TestCase):
         instance.save()
         self.assertNotEqual(original_updated_at, instance.updated_at)
 
-    def test_save_updates_updated_at(self):
-        instance = BaseModel()
-        original_updated_at = instance.updated_at
-        instance.save()
-        self.assertNotEqual(original_updated_at, instance.updated_at)
-        
+    def test_save_with_arg(self):
+        bm = BaseModel()
+        with self.assertRaises(TypeError):
+            bm.save(None)
+
+    def test_save_updates_file(self):
+        bm = BaseModel()
+        bm.save()
+        bmid = "BaseModel." + bm.id
+        with open("file.json", "r") as f:
+            self.assertIn(bmid, f.read())
+
 if __name__ == '__main__':
     unittest.main()

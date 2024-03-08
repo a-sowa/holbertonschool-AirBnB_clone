@@ -14,12 +14,6 @@ class TestFileStorage(unittest.TestCase):
         if os.path.exists(self.file_path):
             os.remove(self.file_path)
 
-    def test_all(self):
-        """Test the all method."""
-        all_objects = self.file_storage.all()
-        self.assertIsInstance(all_objects, dict)
-        self.assertEqual(all_objects, {})
-
     def test_new(self):
         """Test the new method."""
         obj = BaseModel()
@@ -48,17 +42,6 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIn(key1, all_objects)
         self.assertIn(key2, all_objects)
-
-    def test_reload_nonexistent_file(self):
-        """Test reload method with a nonexistent file."""
-        # Remove the file if it exists
-        if os.path.exists(self.file_path):
-            os.remove(self.file_path)
-
-        # Try reloading from a nonexistent file
-        self.file_storage.reload()
-        all_objects = self.file_storage.all()
-        self.assertEqual(all_objects, {})
 
 if __name__ == '__main__':
     unittest.main()

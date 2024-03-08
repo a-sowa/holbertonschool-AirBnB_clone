@@ -44,6 +44,17 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(my_new_model.created_at, datetime)
         self.assertIsInstance(my_new_model.updated_at, datetime)
 
+    def test_str(self):
+        instance = BaseModel()
+        str_representation = str(instance)
+        self.assertTrue('[BaseModel]' in str_representation)
+        self.assertTrue('({})'.format(instance.id) in str_representation)
+
+    def test_save(self):
+        instance = BaseModel()
+        original_updated_at = instance.updated_at
+        instance.save()
+        self.assertNotEqual(original_updated_at, instance.updated_at)
 
 if __name__ == '__main__':
     unittest.main()
